@@ -1,0 +1,247 @@
+<!--  <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+
+    <style>
+        input[type="button"]{
+            background-image: url("https://m.media-amazon.com/images/M/MV5BNWZkMjYzNjctYTMyZi00MjdjLTg5MzMtYjdhM2M0MTI5ZWFkXkEyXkFqcGdeQXVyNTc4MjczMTM@._V1_SX300.jpg");
+        }
+    </style>
+</head>
+
+<body>
+    <input type="button" id='btn' value='Get' onclick="xmlhttp.onload()">
+    <input type="button" id="btn1" value="Reset">
+    <p id="output"></p>
+    <a  id='btn' href="https://m.media-amazon.com/images/M/MV5BNWZkMjYzNjctYTMyZi00MjdjLTg5MzMtYjdhM2M0MTI5ZWFkXkEyXkFqcGdeQXVyNTc4MjczMTM@._V1_SX300.jpg">tag</a>;
+    <a href="https://m.media-amazon.com/images/M/MV5BNDhiNzNhNmMtMjhiZS00Mjc4LWE5ZmEtZjg5YTY2M2FkZmNiXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg">tag1</a>
+    <div id="wrapper">
+        <div id="button">
+            <p>Click me</p>
+        </div>
+        <img src="https://m.media-amazon.com/images/M/MV5BNDhiNzNhNmMtMjhiZS00Mjc4LWE5ZmEtZjg5YTY2M2FkZmNiXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg" alt="">
+        <img src="https://m.media-amazon.com/images/M/MV5BMTUxNzUyNDg1NV5BMl5BanBnXkFtZTgwMTQ0OTg4NjE@._V1_SX300.jpg" alt="">
+        <img src="https://m.media-amazon.com/images/M/MV5BOGM1OTc2MzUtNmMwYi00NTQwLTkzZDItNGI4NmY1ZTJkMGE3XkEyXkFqcGdeQXVyNjExODE1MDc@._V1_SX300.jpg" alt="">
+        <img src="https://m.media-amazon.com/images/M/MV5BNDgzOWJjOTMtZjY4ZS00MGRkLTk0YTMtM2E3ZGQyYmMyYzkzXkEyXkFqcGdeQXVyMTA1OTEwNjE@._V1_SX300.jpg" alt="">
+        <img src="https://m.media-amazon.com/images/M/MV5BYzcyMjAwYzItNjc0ZS00NzViLWFkNWEtYTk0ODdlY2U0ZTJhL2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_SX300.jpg" alt="">
+        <img src="https://m.media-amazon.com/images/M/MV5BNWZkMjYzNjctYTMyZi00MjdjLTg5MzMtYjdhM2M0MTI5ZWFkXkEyXkFqcGdeQXVyNTc4MjczMTM@._V1_SX300.jpg" alt="">
+        <img src="https://m.media-amazon.com/images/M/MV5BMTkzMjczODQzMV5BMl5BanBnXkFtZTcwOTIyOTQ0OQ@@._V1_SX300.jpg" alt="">
+        <img src="https://m.media-amazon.com/images/M/MV5BMTI3ODUxODE0M15BMl5BanBnXkFtZTcwODM0NzU0Mw@@._V1_SX300.jpg" alt="">
+        <img src="https://m.media-amazon.com/images/M/MV5BYzk0MTI0YmUtMDgwOC00M2U5LTgzMDktM2RhN2M3ZDVmOWFiXkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_SX300.jpg" alt="">
+        <img src="https://m.media-amazon.com/images/M/MV5BNjM4NzcxMTkyMF5BMl5BanBnXkFtZTgwMDYzOTAwNzE@._V1_SX300.jpg" alt="">
+    </div>
+
+<script>
+        /*
+                
+                HTTP — протокол передачі даних, що використовується в комп'ютерних мережах.
+                Назва скорочена від Hyper Text Transfer Protocol, протокол передачі гіпер-текстових документів                                                     
+                Переважно передаються між сервером і браузером через так звані порти.                                                         */
+    
+        /*
+            AJAX - Asynchronous JavaScript And XML. Модель для запитів 
+			даних від сервера в фоні, без перезавантаження сторінки.
+        */
+        /*
+            Методи:
+            
+            GET - Отримання даних з сервера;
+            POST - Відправлення даних на сервер для обробки. 
+			Переважно це дані введені користувачем в формі на сторінці;
+            PUT - Дозволяє клієнту створити ресурс по вказаному URL,
+			тобто створити файл на сервері.
+            DELETE - Видалення ресурсу на сервері;
+            HEAD - Отримання метаданих ресурсу.
+			При даному запиті сам ресурс не вертається.
+            OPTIONS - Використовується на клієнті 
+			для отримання списку достуних дій.
+        */
+        /*
+            Статус коди:
+            
+            від 100 + - Інформаційні;
+            від 200 + - Успішні завершення;
+            від 300 + - Команди перенаправлень;
+            від 400 + - Клієнтські помилки;
+            від 500 + - Серверні помилки;
+        */
+        // XMLHttpRequest
+        // 1. Синхронний
+    //    document.getElementById('btn').addEventListener('click', function () {
+    //         var xhr = new XMLHttpRequest(); // Створення об'єкту запиту;
+    //         xhr.open('GET', 'testPage.html', false); // Відправлення синхронного GET запиту;
+    //         xhr.send(); // Відпрака запиту;
+    //         document.getElementById('output').innerHTML += xhr.responseText; // Текст відповіді записується в p
+    //     });
+//         //2. Асинхронний
+        document.getElementById('btn').addEventListener('click', function () {
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', 'http://www.omdbapi.com/?s=superman&page=2&apikey=7cb13bd4', true);
+            
+        });   
+// //  функція почне роботу при зміні властивості readyState;
+// //  Значення властивості readyState:
+// //  0 - Метод open() ще не викликався;
+// //  1 - Метод open() був визваний, але метод send() ще не визивався;
+// //  2 - Метод send() був визваний, але відповідь від сервера ще не отримана;
+// //  3 - Йде прийом даних від сервера;
+// //  4 - Відповідь від сервера повністю отримана і запит завершений;
+            
+            
+//             xhr.onreadystatechange = function(){
+//                 if(xhr.readyState == 4){
+//                     if(xhr.status == 200){
+//                         document.getElementById('output').innerHTML += xhr.responseText;
+//                     }
+//                 }
+//             }
+//             xhr.send();
+//             })
+        
+//             // Приклади роботи з сервером
+//             var xhr = new XMLHttpRequest();
+
+//             xhr.open('GET', 'someServer.php?a=hello&b=world');
+//             xhr.onreadystatechange = function(){
+//                 if(xhr.readyState == 4 && xhr.status == 200){
+//                     document.getElementById('output').innerHTML = xhr.responseText;
+//                 }
+//             }
+
+//             xhr.send();
+
+            // Приклади роботи з it-eBooks API
+            const xmlhttp = new XMLHttpRequest();
+            // let name = prompt('write film');
+            xmlhttp.open('GET', 'http://www.omdbapi.com/?s=superman&page=2&apikey=7cb13bd4'); // Request to the service
+            // xmlhttp.open('GET', 'http://www.omdbapi.com/?t=batman');
+            xmlhttp.onload = () => {
+                if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
+                    let data = JSON.parse(xmlhttp.responseText); // Parse JSON file
+
+                    console.log(data);
+                    myFunction(this);
+                    $(document).ready(function(){
+                    $('#button').click(function(){
+                    $('#wrapper img').src='1.jpg';
+            });
+        });
+                }
+            };
+            xmlhttp.send(null);
+
+            function myFunction(xml) {
+            var i;
+            var xmlDoc = xml.responseXML;
+                for (i = 0; i < 8; i++) { 
+                var x = document.getElementsByName("Poster")[i];
+                console.log(x);
+                    
+
+            }
+        }
+
+        // $('#btn1').onclick = function(){
+        //         img.src='1.jpg';
+        // }
+        $(document).ready(function(){
+                    $('#button').click(function(){
+                    $('#btn1').src='1.jpg';
+        });
+    });
+        // "https://m.media-amazon.com/images/M/MV5BNWZkMjYzNjctYTMyZi00MjdjLTg5MzMtYjdhM2M0MTI5ZWFkXkEyXkFqcGdeQXVyNTc4MjczMTM@._V1_SX300.jpg"
+
+    </script>
+</body>
+
+</html> -->
+
+<!-- <html>
+    <!-- <head>
+    <title>Смена картинок</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+     -->
+
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8">
+  <title>Эффект перекатывания</title>
+  <!-- <style>
+   a.rollover {
+    /* background: url(1.jpg); Путь к файлу с исходным рисунком  */
+    display: block; /*  Рисунок как блочный элемент */
+    width: 196px; /* Ширина рисунка */
+    height: 183px; /*  Высота рисунка */
+   }
+   a.click:hover {
+    background: url(1.jpg); /* Путь к файлу с заменяемым рисунком  */
+   }
+  </style> -->
+ </head>
+ <body>
+  <!-- <p><a href="#" class="rollover"> </a></p> -->
+  <button type="button" value="show" onclick="chg();">Click me!</button>
+  <!-- <img src="1.jpg" alt="" id="ii"> -->
+  <script>
+  function chg(){
+    var img = document.createElement('img'); 
+    // img.src='E:/FIGMA/for/1.jpg';
+    img.src='1.jpg';
+    img.src='https://m.media-amazon.com/images/M/MV5BMTUxNzUyNDg1NV5BMl5BanBnXkFtZTgwMTQ0OTg4NjE@._V1_SX300.jpg';
+    img.src='https://m.media-amazon.com/images/M/MV5BOGM1OTc2MzUtNmMwYi00NTQwLTkzZDItNGI4NmY1ZTJkMGE3XkEyXkFqcGdeQXVyNjExODE1MDc@._V1_SX300.jpg';
+    img.src='https://m.media-amazon.com/images/M/MV5BNDgzOWJjOTMtZjY4ZS00MGRkLTk0YTMtM2E3ZGQyYmMyYzkzXkEyXkFqcGdeQXVyMTA1OTEwNjE@._V1_SX300.jpg';
+    img.src='https://m.media-amazon.com/images/M/MV5BYzcyMjAwYzItNjc0ZS00NzViLWFkNWEtYTk0ODdlY2U0ZTJhL2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_SX300.jpg';
+    img.src='https://m.media-amazon.com/images/M/MV5BNWZkMjYzNjctYTMyZi00MjdjLTg5MzMtYjdhM2M0MTI5ZWFkXkEyXkFqcGdeQXVyNTc4MjczMTM@._V1_SX300.jpg';
+    img.src='https://m.media-amazon.com/images/M/MV5BMTkzMjczODQzMV5BMl5BanBnXkFtZTcwOTIyOTQ0OQ@@._V1_SX300.jpg';
+    img.src='https://m.media-amazon.com/images/M/MV5BMTI3ODUxODE0M15BMl5BanBnXkFtZTcwODM0NzU0Mw@@._V1_SX300.jpg';
+    img.src='https://m.media-amazon.com/images/M/MV5BYzk0MTI0YmUtMDgwOC00M2U5LTgzMDktM2RhN2M3ZDVmOWFiXkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_SX300.jpg';
+    img.src='https://m.media-amazon.com/images/M/MV5BNjM4NzcxMTkyMF5BMl5BanBnXkFtZTgwMDYzOTAwNzE@._V1_SX300.jpg';
+    document.body.appendChild(img);
+    // document.body.appendChild(img);
+    // <img src="https://m.media-amazon.com/images/M/MV5BNDhiNzNhNmMtMjhiZS00Mjc4LWE5ZmEtZjg5YTY2M2FkZmNiXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg" alt="">
+    //     1<img src="https://m.media-amazon.com/images/M/MV5BMTUxNzUyNDg1NV5BMl5BanBnXkFtZTgwMTQ0OTg4NjE@._V1_SX300.jpg" alt="">
+    //     <img src="https://m.media-amazon.com/images/M/MV5BOGM1OTc2MzUtNmMwYi00NTQwLTkzZDItNGI4NmY1ZTJkMGE3XkEyXkFqcGdeQXVyNjExODE1MDc@._V1_SX300.jpg" alt="">
+    //     3<img src="https://m.media-amazon.com/images/M/MV5BNDgzOWJjOTMtZjY4ZS00MGRkLTk0YTMtM2E3ZGQyYmMyYzkzXkEyXkFqcGdeQXVyMTA1OTEwNjE@._V1_SX300.jpg" alt="">
+    //     4<img src="https://m.media-amazon.com/images/M/MV5BYzcyMjAwYzItNjc0ZS00NzViLWFkNWEtYTk0ODdlY2U0ZTJhL2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_SX300.jpg" alt="">
+    //     5<img src="https://m.media-amazon.com/images/M/MV5BNWZkMjYzNjctYTMyZi00MjdjLTg5MzMtYjdhM2M0MTI5ZWFkXkEyXkFqcGdeQXVyNTc4MjczMTM@._V1_SX300.jpg" alt="">
+    //     <img src="https://m.media-amazon.com/images/M/MV5BMTkzMjczODQzMV5BMl5BanBnXkFtZTcwOTIyOTQ0OQ@@._V1_SX300.jpg" alt="">
+    //     <img src="https://m.media-amazon.com/images/M/MV5BMTI3ODUxODE0M15BMl5BanBnXkFtZTcwODM0NzU0Mw@@._V1_SX300.jpg" alt="">
+    //     <img src="https://m.media-amazon.com/images/M/MV5BYzk0MTI0YmUtMDgwOC00M2U5LTgzMDktM2RhN2M3ZDVmOWFiXkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_SX300.jpg" alt="">
+    //     <img src="https://m.media-amazon.com/images/M/MV5BNjM4NzcxMTkyMF5BMl5BanBnXkFtZTgwMDYzOTAwNzE@._V1_SX300.jpg" alt="">
+    // </div>
+
+    
+
+    // document.write(el.src);
+    // document.write(el.src);
+}
+// Приклади роботи з it-eBooks API
+const xmlhttp = new XMLHttpRequest();
+            // let name = prompt('write film');
+            xmlhttp.open('GET', 'http://www.omdbapi.com/?s=superman&page=2&apikey=7cb13bd4'); // Request to the service
+            // xmlhttp.open('GET', 'http://www.omdbapi.com/?t=batman');
+            xmlhttp.onload = () => {
+                if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
+                    let data = JSON.parse(xmlhttp.responseText); // Parse JSON file
+
+                    console.log(data);
+            // });
+        // });
+                }
+            };
+            xmlhttp.send(null);
+
+</script>
+</body>
+
+
+
+
+
+
+
